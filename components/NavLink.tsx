@@ -9,7 +9,7 @@ export interface NavLinkProp {
 export default function NavLink({ id, href, content }: NavLinkProp) {
   return (
     <Link href={href} className="group">
-      <span className="font-mono">{id} </span>
+      <span className="font-mono font-semibold">{id} </span>
 
       <span className="inline-flex flex-col">
         <span>{content}</span>
