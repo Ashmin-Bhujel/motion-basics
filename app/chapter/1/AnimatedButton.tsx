@@ -8,10 +8,12 @@ export default function AnimatedButton() {
       initial={{
         opacity: 0,
         y: 32,
+        scale: 1.03,
       }}
       animate={{
         opacity: 1,
         y: 0,
+        scale: 1,
       }}
       whileHover={{
         rotateX: 15,
