@@ -24,6 +24,9 @@ export default function AnimatedButton() {
       whileTap={{
         y: 0,
         scale: 0.85,
+        transition: {
+          duration: 0.3,
+        },
       }}
       transition={{
         duration: 0.3,
