@@ -11,4 +11,9 @@ export const navLinks: NavLinkProp[] = [
     href: "/chapter/2",
     content: "Hover & Exit Animations",
   },
+  {
+    id: "[ 3 ]",
+    href: "/chapter/3",
+    content: "Variants & Animation Orchestration",
+  },
 ];
