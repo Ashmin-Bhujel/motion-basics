@@ -12,8 +12,10 @@ export default function ChapterHeading({
 }: ChapterHeadingProps & React.HTMLProps<HTMLDivElement>) {
   return (
     <section className={className} {...props}>
-      <h1 className="mb-2 text-4xl font-semibold">{heading}</h1>
-      {subHeading && <p className="text-neutral-400">{subHeading}</p>}
+      <h1 className="mb-2 text-4xl font-semibold tracking-tight">{heading}</h1>
+      {subHeading && (
+        <p className="tracking-wide text-neutral-400">{subHeading}</p>
+      )}
     </section>
   );
 }

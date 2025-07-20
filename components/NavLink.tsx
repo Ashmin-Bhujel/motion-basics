@@ -8,7 +8,7 @@ export interface NavLinkProp {
 
 export default function NavLink({ id, href, content }: NavLinkProp) {
   return (
-    <Link href={href} className="group">
+    <Link href={href} className="group tracking-wide">
       <span className="font-mono font-semibold">{id} </span>
 
       <span className="inline-flex flex-col">

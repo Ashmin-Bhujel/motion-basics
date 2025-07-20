@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header className="border-b border-neutral-800">
       <nav className="container mx-auto p-4">
-        <Link href={"/"} className="group text-xl font-semibold">
+        <Link href={"/"} className="group text-xl font-semibold tracking-tight">
           <span className="font-mono">[ 0 ] </span>
 
           <span className="inline-flex flex-col">
