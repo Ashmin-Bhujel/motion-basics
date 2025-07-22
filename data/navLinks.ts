@@ -21,4 +21,9 @@ export const navLinks: NavLinkProp[] = [
     href: "/chapter/4",
     content: "Hooks in Motion for React",
   },
+  {
+    id: "[ 5 ]",
+    href: "/chapter/5",
+    content: "Layout Animations",
+  },
 ];
