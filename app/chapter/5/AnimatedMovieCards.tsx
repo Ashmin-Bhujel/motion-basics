@@ -36,7 +36,6 @@ export default function AnimatedMovieCards() {
   };
 
   const ref = useClickOutsideOrEscape(() => {
-    console.log("Clicked outside");
     setCurrentMovie(null);
   });
 
