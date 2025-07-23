@@ -31,4 +31,9 @@ export const navLinks: NavLinkProp[] = [
     href: "/chapter/6/animated-text",
     content: "Animation Sequences with Animated Text",
   },
+  {
+    id: "[ 6.2 ]",
+    href: "/chapter/6/animated-button",
+    content: "Animation Sequences with Animated Button",
+  },
 ];
