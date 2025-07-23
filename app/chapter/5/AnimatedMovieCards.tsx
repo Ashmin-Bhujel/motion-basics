@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "motion/react";
 export default function AnimatedMovieCards() {
   const [currentMovie, setCurrentMovie] = useState<Movie | null>(null);
 
-  const useClickOutside = (cb: () => void) => {
+  const useClickOutsideOrEscape = (cb: () => void) => {
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -18,24 +18,32 @@ export default function AnimatedMovieCards() {
         }
       };
 
+      const pressEscape = (event: KeyboardEvent) => {
+        if (event.key === "Escape") {
+          cb();
+        }
+      };
+
+      document.addEventListener("keydown", pressEscape);
       document.addEventListener("mousedown", handleClickOutside);
       return () => {
         document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener("keydown", pressEscape);
       };
     }, [cb]);
 
     return ref;
   };
 
-  const ref = useClickOutside(() => {
+  const ref = useClickOutsideOrEscape(() => {
     console.log("Clicked outside");
     setCurrentMovie(null);
   });
 
   return (
     <section className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-      {currentMovie && (
-        <AnimatePresence>
+      <AnimatePresence>
+        {currentMovie && (
           <motion.section
             initial={{
               opacity: 0,
@@ -45,14 +53,17 @@ export default function AnimatedMovieCards() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="fixed inset-0 z-10 bg-neutral-950/80 backdrop-blur-sm"
           ></motion.section>
-        </AnimatePresence>
-      )}
+        )}
+      </AnimatePresence>
       {currentMovie && (
         <div
           ref={ref}
           className="fixed top-1/2 left-1/2 z-20 flex -translate-1/2 items-center justify-center p-4"
         >
-          <MovieCardOpened movie={currentMovie} />
+          <MovieCardOpened
+            movie={currentMovie}
+            setCurrentMovie={setCurrentMovie}
+          />
         </div>
       )}
       {movies.map((movie) => (

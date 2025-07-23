@@ -16,11 +16,10 @@ export default function MovieCardPreview({
       initial={{ opacity: 0, y: 32 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       key={movie.title}
       onClick={() => setCurrentMovie(movie)}
-      className="group flex cursor-pointer items-center overflow-hidden rounded-xl border border-neutral-700 transition-colors duration-300 ease-in-out hover:border-neutral-600"
+      className="group flex cursor-pointer items-center overflow-hidden rounded-xl bg-neutral-800 transition-colors duration-300 ease-in-out"
     >
       {/* Poster */}
       <motion.div
